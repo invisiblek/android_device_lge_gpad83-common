@@ -97,6 +97,9 @@ on post-fs-data
     # To observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/vendor/wifi 0770 wifi wifi
+
     chown system system /dev/wcnss_wlan
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
