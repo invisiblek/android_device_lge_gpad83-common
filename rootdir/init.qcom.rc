@@ -36,6 +36,8 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
+    setprop sys.usb.ffs.aio_compat 1
+
     # Set default LCD brightness
     write /sys/class/leds/lcd-backlight/brightness 102
 
