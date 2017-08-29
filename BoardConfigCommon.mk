@@ -79,7 +79,7 @@ DEVICE_MANIFEST_FILE := device/lge/gpad83-common/configs/manifest.xml
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/v500
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 ehci-hcd.park=3 lpj=67677 androidboot.hardware=qcom vmalloc=400M
+BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 ehci-hcd.park=3 lpj=67677 androidboot.hardware=qcom vmalloc=400M androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
@@ -101,9 +101,9 @@ TARGET_RECOVERY_FSTAB := device/lge/gpad83-common/rootdir/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux policies
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/lge/gpad83-common/sepolicy
+#BOARD_SEPOLICY_DIRS += device/lge/gpad83-common/sepolicy
 
 # Snapdragon LLVM
 TARGET_USE_SDCLANG := true
