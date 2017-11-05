@@ -121,7 +121,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so
+    /system/vendor/lib/hw/camera.vendor.msm8960.so|libshims_camera.so
 
 # Snapdragon LLVM
 TARGET_USE_SDCLANG := true

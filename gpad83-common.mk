@@ -78,7 +78,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
-    libcamera_shim \
+    libshims_camera \
     Snap
 
 # Configure libhwui
