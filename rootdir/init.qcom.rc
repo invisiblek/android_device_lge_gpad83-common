@@ -188,7 +188,7 @@ service rmt_storage /system/bin/rmt_storage
     user root
     group system
 
-service hwaddrs /system/bin/hwaddrs
+service hwaddrs /vendor/bin/hwaddrs
     class core
     user system
     group system wifi
