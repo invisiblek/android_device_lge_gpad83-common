@@ -101,7 +101,7 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += /system/bin/mm-qcamera-daemon=22
 
 # Partitions
-TARGET_EXFAT_DRIVER                := exfat
+TARGET_EXFAT_DRIVER                := sdfat
 TARGET_USERIMAGES_USE_EXT4         := true
 TARGET_USERIMAGES_USE_F2FS         := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
