@@ -56,7 +56,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.disable=true
+    audio.offload.disable=1 \
+    mm.enable.smoothstreaming=true \
+    ro.qc.sdk.audio.fluencetype=none \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true \
+    qcom.hw.aac.encoder=true
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
