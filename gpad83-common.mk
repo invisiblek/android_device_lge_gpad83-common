@@ -51,7 +51,6 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=smd \
     ro.qualcomm.bt.hci_transport=smd
 
 # CABL
