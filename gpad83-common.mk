@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.btmacaddr=00:00:00:00:00:00 \
     ro.qualcomm.bt.hci_transport=smd
 
 # CABL
