@@ -22,8 +22,6 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
-    symlink /sdcard /storage/sdcard0
-
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     
