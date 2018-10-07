@@ -21,10 +21,6 @@ import init.target.rc
 on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
-on init
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
-    
 on fs
     wait /dev/block/platform/${ro.boot.bootdevice}
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice

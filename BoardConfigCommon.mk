@@ -106,6 +106,8 @@ TARGET_USERIMAGES_USE_EXT4         := true
 TARGET_USERIMAGES_USE_F2FS         := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 BOARD_FLASH_BLOCK_SIZE             := 131072      # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_ROOT_EXTRA_FOLDERS           := persist
+TARGET_FS_CONFIG_GEN               := device/lge/gpad83-common/config.fs
 
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
