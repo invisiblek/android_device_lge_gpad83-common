@@ -230,4 +230,5 @@ PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.direct.interface=p2p0 \
     wifi.interface=wlan0
