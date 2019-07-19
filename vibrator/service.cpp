@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.vibrator@1.1-service.gpad83"
 
-#include <android/hardware/vibrator/1.1/IVibrator.h>
+#define LOG_TAG "android.hardware.vibrator@1.0-service.gpad83"
+
+#include <android/hardware/vibrator/1.0/IVibrator.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
+#ifdef ARCH_ARM_32
+#include <hwbinder/ProcessState.h>
+#endif
 #include <utils/Errors.h>
 #include <utils/StrongPointer.h>
 
@@ -25,14 +29,17 @@
 
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
-using android::hardware::vibrator::V1_1::IVibrator;
-using android::hardware::vibrator::V1_1::implementation::Vibrator;
+using android::hardware::vibrator::V1_0::IVibrator;
+using android::hardware::vibrator::V1_0::implementation::Vibrator;
+using android::status_t;
 using namespace android;
 
 static const char *ENABLE_PATH = "/sys/class/timed_output/vibrator/enable";
-static const char *AMPLITUDE_PATH = "/sys/devices/platform/tspdrv/nforce_timed";
 
-status_t registerVibratorService() {
+int main() {
+#ifdef ARCH_ARM_32
+    android::hardware::ProcessState::initWithMmapSize((size_t)8192);
+#endif
     std::ofstream enable{ENABLE_PATH};
     if (!enable) {
         int error = errno;
@@ -40,25 +47,19 @@ status_t registerVibratorService() {
         return -error;
     }
 
-    std::ofstream amplitude{AMPLITUDE_PATH};
-    if (!amplitude) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", AMPLITUDE_PATH, error, strerror(error));
-        return -error;
-    }
+    sp<IVibrator> vibrator = new Vibrator(std::move(enable));
 
-    sp<IVibrator> vibrator = new Vibrator(std::move(enable), std::move(amplitude));
-    vibrator->registerAsService();
-    return OK;
-}
-
-int main() {
     configureRpcThreadpool(1, true);
-    status_t status = registerVibratorService();
+
+    status_t status = vibrator->registerAsService();
 
     if (status != OK) {
-        return status;
+        return 1;
     }
 
+    ALOGI("Vibrator HAL Ready.");
     joinRpcThreadpool();
+    // Under normal cases, execution will not reach this line.
+    ALOGE("Vibrator HAL failed to join thread pool.");
+    return 1;
 }
