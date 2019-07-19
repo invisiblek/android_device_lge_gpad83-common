@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -81,21 +82,30 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
 # DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     gps.conf \
     gps.msm8960
 
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     libgenlock \
     hwcomposer.msm8960 \
     gralloc.msm8960 \
@@ -133,7 +143,8 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -164,8 +175,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.power=awifi
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Rootdir
 PRODUCT_COPY_FILES += \
@@ -176,6 +188,9 @@ PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sensors.wl_dis=true \
     ro.qualcomm.sensors.smd=true
@@ -187,6 +202,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/configs/thermald.conf:system/etc/thermald.conf
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic
 
 # Vibrator
 PRODUCT_PACKAGES += \
