@@ -92,6 +92,7 @@ BOARD_CUSTOM_BOOTIMG := true
 # Legacy stuff
 BOARD_GLOBAL_CFLAGS += -DQCOM_BSP_LEGACY
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += /system/bin/mm-qcamera-daemon=22
 
 # Partitions
 TARGET_EXFAT_DRIVER                := exfat
