@@ -91,11 +91,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
 # GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service \
-    gps.conf \
-    gps.msm8960
+#PRODUCT_PACKAGES += \
+#    android.hardware.gnss@1.0-impl \
+#    android.hardware.gnss@1.0-service \
+#    gps.conf \
+#    gps.msm8960
 
 # Graphics
 PRODUCT_PACKAGES += \
