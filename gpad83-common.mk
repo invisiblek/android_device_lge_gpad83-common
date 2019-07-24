@@ -43,6 +43,9 @@ PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/configs/audio_policy.conf:system/etc/audio_policy.conf \
     device/lge/gpad83-common/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.disable=true
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/configs/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
