@@ -172,9 +172,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libmm-omxcore \
     libOmxCore \
-    libOmxVdec \
     libOmxVenc \
+    libOmxVdec \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libstagefrighthw
 
 # Power HAL
