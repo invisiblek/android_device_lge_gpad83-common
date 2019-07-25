@@ -30,14 +30,17 @@ $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-hea
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@2.0-service \
-    audio.primary.msm8960 \
     audio.a2dp.default \
-    audio.usb.default \
+    audio.primary.msm8960 \
     audio.r_submix.default \
-    libaudio-resampler
+    audio.usb.default \
+    libaudio-resampler \
+    libqcomvoiceprocessing \
+    tinyplay \
+    tinycap \
+    tinymix \
+    tinypcminfo
 
 PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/configs/audio_policy.conf:system/etc/audio_policy.conf \
