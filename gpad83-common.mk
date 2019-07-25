@@ -223,10 +223,8 @@ PRODUCT_PACKAGES += \
     hostapd \
     wificond \
     wpa_supplicant \
-    wpa_supplicant.conf
-
-PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/configs/init.qcom.wifi.sh:system/bin/init.qcom.wifi.sh
+    wpa_supplicant.conf \
+    wcnss_service
 
 PRODUCT_COPY_FILES += \
     device/lge/gpad83-common/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
