@@ -16,7 +16,7 @@
 
 PRODUCT_CHARACTERISTICS := tablet
 
-DEVICE_PACKAGE_OVERLAYS := device/lge/gpad83-common/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1200
@@ -43,16 +43,16 @@ PRODUCT_PACKAGES += \
     tinypcminfo
 
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/lge/gpad83-common/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    device/lge/gpad83-common/configs/mixer_paths.xml:system/vendor/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths.xml:system/vendor/etc/mixer_paths.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.disable=true
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/configs/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
+    $(LOCAL_PATH)/configs/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
@@ -160,9 +160,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/configs/media_codecs.xml:system/vendor/etc/media_codecs.xml \
-    device/lge/gpad83-common/configs/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml \
-    device/lge/gpad83-common/configs/media_profiles.xml:system/vendor/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/vendor/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/vendor/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/vendor/etc/media_codecs_google_video.xml
 
@@ -194,11 +194,11 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/rootdir/fstab.qcom:root/fstab.qcom \
-    device/lge/gpad83-common/rootdir/init.qcom.rc:root/init.qcom.rc \
-    device/lge/gpad83-common/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
-    device/lge/gpad83-common/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/lge/gpad83-common/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
+    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
+    $(LOCAL_PATH)/rootdir/init.qcom.power.rc:root/init.qcom.power.rc \
+    $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -214,7 +214,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/configs/thermald.conf:system/vendor/etc/thermald.conf
+    $(LOCAL_PATH)/configs/thermald.conf:system/vendor/etc/thermald.conf
 
 # USB
 PRODUCT_PACKAGES += \
@@ -235,8 +235,8 @@ PRODUCT_PACKAGES += \
     wcnss_service
 
 PRODUCT_COPY_FILES += \
-    device/lge/gpad83-common/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    device/lge/gpad83-common/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.direct.interface=p2p0 \

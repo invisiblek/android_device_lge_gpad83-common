@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_COMMON_PATH := device/lge/gpad83-common
+
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -33,7 +35,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/gpad83-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_COMMON_PATH)/bluetooth
 
 # Board
 TARGET_BOARD_PLATFORM := msm8960
@@ -73,11 +75,11 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Hardware tunables
-BOARD_HARDWARE_CLASS := device/lge/gpad83-common/lineagehw/
+BOARD_HARDWARE_CLASS := $(DEVICE_COMMON_PATH)/lineagehw/
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/knock_on"
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/lge/gpad83-common/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_COMMON_PATH)/configs/manifest.xml
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/v500
@@ -87,7 +89,7 @@ BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 ehci-hcd.park=3 lpj=67677 andr
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/gpad83-common/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_COMMON_PATH)/mkbootimg.mk
 BOARD_CUSTOM_BOOTIMG := true
 
 # Legacy stuff
@@ -107,12 +109,12 @@ TARGET_HAS_LEGACY_POWER_STATS := true
 TARGET_HAS_NO_WLAN_STATS := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/lge/gpad83-common/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_COMMON_PATH)/rootdir/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux policies
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/lge/gpad83-common/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
