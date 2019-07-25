@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     tinypcminfo
 
 PRODUCT_COPY_FILES += \
+    device/lge/gpad83-common/configs/audio_effects.conf:system/etc/audio_effects.conf \
     device/lge/gpad83-common/configs/audio_policy.conf:system/etc/audio_policy.conf \
     device/lge/gpad83-common/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
