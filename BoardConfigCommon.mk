@@ -129,6 +129,11 @@ TARGET_USE_SDCLANG := true
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+-include $(DEVICE_COMMON_PATH)/twrp.mk
+endif
+
 # USB
 TARGET_USES_LEGACY_ADB_INTERFACE := true
 
