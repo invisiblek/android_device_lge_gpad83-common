@@ -119,11 +119,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    android.hardware.gnss@1.0-impl \
-#    android.hardware.gnss@1.0-service \
-#    gps.conf \
-#    gps.msm8960
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    gps.conf \
+    gps.msm8960
+
+PRODUCT_COPY_FILES += \
+    device/lge/gpad83-common/configs/gps.conf:vendor/etc/gps.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
