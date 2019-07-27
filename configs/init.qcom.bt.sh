@@ -31,7 +31,6 @@ logi "Transport : $TRANSPORT"
 #load bd addr
 BDADDR=`cat /data/misc/bluetooth/bdaddr`
 
-setprop bluetooth.status off
 setprop vendor.bluetooth.status off
 
 logi "BDADDR: $BDADDR"
@@ -58,12 +57,10 @@ fi
 case $? in
   0) logi "Bluetooth QSoC firmware download succeeded, $PWR_CLASS $BDADDR $TRANSPORT";;
   *) failed "Bluetooth QSoC firmware download failed" $exit_code_hci_qcomm_init;
-     setprop bluetooth.status off;
      setprop vendor.bluetooth.status off;
      exit $exit_code_hci_qcomm_init;;
 esac
 
-setprop bluetooth.status on
 setprop vendor.bluetooth.status on
 
 logi "start bluetooth smd transport"
