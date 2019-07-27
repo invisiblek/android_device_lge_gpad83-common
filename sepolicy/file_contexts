@@ -1,5 +1,5 @@
 # Bluetooth
-/system/bin/init\.qcom\.bt\.sh                       u:object_r:bluetooth_loader_exec:s0
+/vendor/bin/init\.qcom\.bt\.sh                       u:object_r:bluetooth_loader_exec:s0
 
 # Camera
 /dev/gemini0                                         u:object_r:camera_device:s0
@@ -21,7 +21,7 @@
 /dev/gss                                             u:object_r:gss_device:s0
 
 # Hwaddrs
-/system/bin/hwaddrs                                  u:object_r:hwaddrs_exec:s0
+/vendor/bin/hwaddrs                                  u:object_r:hwaddrs_exec:s0
 
 # Sensors
 /data/app/sensor_ctl_socket                          u:object_r:sensors_socket:s0
@@ -31,5 +31,5 @@
 /data/misc/tzapps(/.*)?                              u:object_r:tee_data_file:s0
 
 # Wifi
-/system/bin/conn_init                                u:object_r:conn_init_exec:s0
-/system/bin/init\.qcom\.wifi\.sh                     u:object_r:conn_init_exec:s0
+/vendor/bin/conn_init                                u:object_r:conn_init_exec:s0
+/vendor/bin/init\.qcom\.wifi\.sh                     u:object_r:conn_init_exec:s0

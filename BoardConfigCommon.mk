@@ -98,7 +98,7 @@ BOARD_CUSTOM_BOOTIMG := true
 # Legacy stuff
 BOARD_GLOBAL_CFLAGS += -DQCOM_BSP_LEGACY
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_PROCESS_SDK_VERSION_OVERRIDE += /system/bin/mm-qcamera-daemon=22
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += /system/vendor/bin/mm-qcamera-daemon=22
 
 # Partitions
 TARGET_EXFAT_DRIVER                := sdfat
@@ -121,7 +121,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so
+    /vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so
 
 # Snapdragon LLVM
 TARGET_USE_SDCLANG := true
