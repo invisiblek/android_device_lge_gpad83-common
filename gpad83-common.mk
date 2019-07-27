@@ -75,7 +75,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.btmacaddr=00:00:00:00:00:00 \
-    ro.qualcomm.bt.hci_transport=smd
+    ro.qualcomm.bt.hci_transport=smd \
+    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr \
+    vendor.qcom.bluetooth.soc=pronto
 
 # CABL
 PRODUCT_PROPERTY_OVERRIDES += \
