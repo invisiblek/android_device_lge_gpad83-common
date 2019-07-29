@@ -122,17 +122,16 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>1</item>
         <item>5</item>
-        <item>15</item>
+        <item>10</item>
         <item>50</item>
         <item>100</item>
         <item>200</item>
         <item>400</item>
-        <item>650</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
+        <item>600</item>
+        <item>900</item>
+        <item>1700</item>
+        <item>3500</item>
         <item>5000</item>
     </integer-array>
 
@@ -142,19 +141,17 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>45</item>  <!-- 0-1 -->
-        <item>75</item>  <!-- 1-5 -->
-        <item>95</item>  <!-- 5-15 -->
-        <item>115</item>  <!-- 15-50 -->
-        <item>135</item> <!-- 50-100 -->
-        <item>150</item> <!-- 100-200 -->
-        <item>165</item> <!-- 200-400 -->
-        <item>180</item> <!-- 400-650 -->
-        <item>195</item> <!-- 650-1000 -->
-        <item>210</item> <!-- 1000-2000 -->
-        <item>225</item> <!-- 2000-3000 -->
-        <item>240</item> <!-- 3000-5000 -->
-        <item>255</item> <!-- 5000+ -->
+        <item>64</item>
+        <item>71</item>
+        <item>85</item>
+        <item>106</item>
+        <item>124</item>
+        <item>148</item>
+        <item>177</item>
+        <item>179</item>
+        <item>198</item>
+        <item>211</item>
+        <item>255</item>
     </integer-array>
 
     <!-- Flag indicating whether the current device is "voice capable".
