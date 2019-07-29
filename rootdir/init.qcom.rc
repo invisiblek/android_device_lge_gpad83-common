@@ -150,6 +150,9 @@ on post-fs-data
     chmod 775 /data/system/sensors
     write /data/system/sensors/settings 1
     chmod 660 /data/system/sensors/settings
+    write /persist/sensors/sensors_settings 1
+    chmod 0644 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
 
     # AKM setting data
     mkdir /data/misc/sensors
