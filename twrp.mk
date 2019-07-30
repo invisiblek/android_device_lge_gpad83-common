@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_VARIANT := twrp
 TW_DEFAULT_BRIGHTNESS := 127
 TW_EXCLUDE_TWRPAPP := true
