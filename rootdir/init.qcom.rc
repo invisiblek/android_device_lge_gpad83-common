@@ -244,9 +244,10 @@ service charger /sbin/healthd -c
     critical
     seclabel u:r:healthd:s0
 
-service thermald /vendor/bin/thermald
+service thermal-engine /vendor/bin/thermal-engine
     class main
-    group radio system
+    user root
+    group root
 
 service mpdecision /vendor/bin/mpdecision --avg_comp
     class main
