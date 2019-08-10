@@ -35,7 +35,7 @@ on enable-low-power
 
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1350000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1512000:90 1728000:95"
@@ -57,7 +57,7 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/boost_ms 30
     write /sys/module/cpu_boost/parameters/input_boost_ms 30
     write /sys/module/cpu_boost/parameters/sync_threshold 0
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1026000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1350000
     write /sys/module/cpu_boost/parameters/load_based_syncs 0
 
     write /sys/module/msm_thermal/core_control/enabled 1
