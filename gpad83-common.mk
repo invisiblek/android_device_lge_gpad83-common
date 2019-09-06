@@ -236,6 +236,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sensors.wl_dis=true \
     ro.qualcomm.sensors.smd=true
 
+# System Server
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064.conf

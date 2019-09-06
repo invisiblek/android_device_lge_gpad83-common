@@ -127,9 +127,6 @@ TARGET_LD_SHIM_LIBS := \
 # Snapdragon LLVM
 TARGET_USE_SDCLANG := true
 
-# System Server
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
-
 # TWRP
 ifeq ($(WITH_TWRP),true)
 -include $(DEVICE_COMMON_PATH)/twrp.mk
