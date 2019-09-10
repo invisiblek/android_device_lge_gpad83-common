@@ -119,6 +119,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # SELinux policies
 #include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)/sepolicy-minimal
+PRIVATE_EXCLUDE_BUILD_TEST := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
