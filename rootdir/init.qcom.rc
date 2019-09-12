@@ -206,7 +206,7 @@ on property:init.svc.hwaddrs=stopped
 service hciattach /vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group qcom_oncrpc bluetooth net_bt_admin system
+    group bluetooth net_bt_admin system
     disabled
     oneshot
 
