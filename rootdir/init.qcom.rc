@@ -243,7 +243,6 @@ on property:ro.data.large_tcp_window_size=true
 service charger /sbin/healthd -c
     class charger
     critical
-    seclabel u:r:healthd:s0
 
 service thermal-engine /vendor/bin/thermal-engine
     class main
