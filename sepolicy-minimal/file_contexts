@@ -1,1 +1,2 @@
 /persist(/.*)?           u:object_r:persist_file:s0
+/sns(/.*)?               u:object_r:sns_file:s0

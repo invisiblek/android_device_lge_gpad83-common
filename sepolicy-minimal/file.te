@@ -1,1 +1,2 @@
 type persist_file, file_type;
+type sns_file, file_type;
